@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-// Nested components, React tools
-function Greeting() {
+// Mini Book project
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h1>Cuong Dong Minh</h1>;
-const Message = () => <p>This is a message</p>;
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
 
-ReactDom.render(<Greeting />, document.getElementById('root'));
+const Image = () => {
+  return (
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/I/713mzPe9SwS._AC_UL200_SR200,200_.jpg"
+      alt=""
+    />
+  );
+};
+
+const Title = () => <h1>Atomic Habits: An Easy & Proven Way to…</h1>;
+const Author = () => <h4>James Clear</h4>;
+
+ReactDom.render(<BookList />, document.getElementById('root'));
