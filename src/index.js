@@ -1,21 +1,17 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-// stateless functional component
-// always return JSX
-// JSX rules
-// return single element
-// div / section / article or Fragment
-// use camelCase for HTML attribute
-// className instead of class
-// close every element
-// formatting
+// Nested components, React tools
 function Greeting() {
   return (
     <div>
-      <h1>Hello world</h1>
+      <Person />
+      <Message />
     </div>
   );
 }
+
+const Person = () => <h1>Cuong Dong Minh</h1>;
+const Message = () => <p>This is a message</p>;
 
 ReactDom.render(<Greeting />, document.getElementById('root'));
