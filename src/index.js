@@ -3,6 +3,13 @@ import ReactDom from 'react-dom';
 
 // stateless functional component
 // always return JSX
+// JSX rules
+// return single element
+// div / section / article or Fragment
+// use camelCase for HTML attribute
+// className instead of class
+// close every element
+// formatting
 function Greeting() {
   return (
     <div>
@@ -10,13 +17,5 @@ function Greeting() {
     </div>
   );
 }
-
-// const Greeting = () => {
-//   return React.createElement(
-//     'div',
-//     {},
-//     React.createElement('h1', {}, 'hello world')
-//   );
-// };
 
 ReactDom.render(<Greeting />, document.getElementById('root'));
