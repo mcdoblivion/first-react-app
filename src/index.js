@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
+// CSS
+import './index.css';
+
 // Mini Book project
 function BookList() {
   return (
-    <section>
+    <section className="book-list">
       <Book />
       <Book />
       <Book />
