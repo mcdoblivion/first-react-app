@@ -9,39 +9,24 @@ function BookList() {
   return (
     <section className="book-list">
       <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
     </section>
   );
 }
 
+const author = 'James Clear';
 const Book = () => {
+  const title = 'Atomic Habits: An Easy & Proven Way to…';
   return (
-    <article>
-      <Image />
-      <Title />
-      <Author />
+    <article className="book">
+      <img
+        src="https://images-na.ssl-images-amazon.com/images/I/713mzPe9SwS._AC_UL200_SR200,200_.jpg"
+        alt=""
+      />
+      <h1>{title}</h1>
+      <h4>{author.toUpperCase()}</h4>
+      <p>{1 + 2}</p>
     </article>
   );
 };
-
-const Image = () => {
-  return (
-    <img
-      src="https://images-na.ssl-images-amazon.com/images/I/713mzPe9SwS._AC_UL200_SR200,200_.jpg"
-      alt=""
-    />
-  );
-};
-
-const Title = () => <h1>Atomic Habits: An Easy & Proven Way to…</h1>;
-const Author = () => (
-  <h4 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem' }}>
-    James Clear
-  </h4>
-);
 
 ReactDom.render(<BookList />, document.getElementById('root'));
