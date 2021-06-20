@@ -5,44 +5,37 @@ import ReactDom from 'react-dom';
 import './index.css';
 
 // Set up vars
-const firstBook = {
-  title: 'Atomic Habits: An Easy & Proven Way to…',
-  author: 'James Clear',
-  img: 'https://images-na.ssl-images-amazon.com/images/I/713mzPe9SwS._AC_UL200_SR200,200_.jpg',
-};
-
-const secondBook = {
-  title: 'Where the Crawdads Sing',
-  author: 'Delia Owens',
-  img: 'https://images-na.ssl-images-amazon.com/images/I/81255VTWssL._AC_UL200_SR200,200_.jpg',
-};
+const books = [
+  {
+    title: 'Atomic Habits: An Easy & Proven Way to…',
+    author: 'James Clear',
+    img: 'https://images-na.ssl-images-amazon.com/images/I/713mzPe9SwS._AC_UL200_SR200,200_.jpg',
+  },
+  {
+    title: 'Where the Crawdads Sing',
+    author: 'Delia Owens',
+    img: 'https://images-na.ssl-images-amazon.com/images/I/81255VTWssL._AC_UL200_SR200,200_.jpg',
+  },
+  {
+    title: 'Joshua Weissman: An Unapologetic Cookbook',
+    author: 'Joshua Weissman',
+    img: 'https://images-na.ssl-images-amazon.com/images/I/91ll975iVRS._AC_UL200_SR200,200_.jpg',
+  },
+];
 
 // Mini Book project
 function BookList() {
   return (
     <section className="book-list">
-      <Book
-        title={firstBook.title}
-        img={firstBook.img}
-        author={firstBook.author}
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam itaque
-          incidunt placeat neque voluptas tempora facilis cumque voluptatibus
-          laboriosam ipsum?
-        </p>
-      </Book>
-      <Book
-        title={secondBook.title}
-        img={secondBook.img}
-        author={secondBook.author}
-      />
+      {books.map((book) => {
+        return <Book book={book} />;
+      })}
     </section>
   );
 }
 
 const Book = (props) => {
-  const { img, title, author } = props;
+  const { img, title, author } = props.book;
   return (
     <article className="book">
       <img src={img} alt="" />
